@@ -25,55 +25,58 @@ from dash.development.base_component import Component
 app = dash.Dash(__name__)
 server= app.server
 
-app.layout = html.Div(children=[ 
-
+app.layout = html.Div(children=[
+    
+    # Title Section
     html.Div(className='divv', children=[ 
-        
-        html.H1('BMHC Dashboard Homepage', 
-        className='title'),
-    ]),    
-
-
-html.Div(
-    className='',
-    children=[
-        html.Div(
-            className='',
-            children=[
-                html.H1(
-                    className='table-title1',
-                    children='Please Select a Report:'
-                )
-            ]
-        ),
-        html.Div(
-            className='',
-            children=[
-                html.A(
-                    href='/quarterly-reports',  # URL for Quarterly Reports page
-                    children=html.H1(
+        html.H1(
+            'BMHC Dashboard Homepage', 
+            className='title'
+        )
+    ]),
+    
+    # Report Selection Section
+    html.Div(
+        className='',
+        children=[
+            html.Div(
+                className='',
+                children=[
+                    html.H1(
                         className='table-title1',
-                        children='Quarterly Reports'
-                    ),
-                    style={'textDecoration': 'none', 'color': 'inherit'}  # Optional styling
-                )
-            ]
-        ),
-        html.Div(
-            className='',
-            children=[
-                html.A(
-                    href='/impact-reports',  # URL for Impact Reports page
-                    children=html.H1(
-                        className='table-title1',
-                        children='Impact Reports'
-                    ),
-                    style={'textDecoration': 'none', 'color': 'inherit'}  # Optional styling
-                )
-            ]
-        ),
-    ]
-)
+                        children='Please Select a Report:'
+                    )
+                ]
+            ),
+            html.Div(
+                className='',
+                children=[
+                    html.A(
+                        href='/https://bmhc-quarterly-home.onrender.com',  # URL for Quarterly Reports page
+                        children=html.H1(
+                            className='table-title1',
+                            children='Quarterly Reports'
+                        ),
+                        style={'textDecoration': 'none', 'color': 'inherit'}  # Optional styling
+                    )
+                ]
+            ),
+            html.Div(
+                className='',
+                children=[
+                    html.A(
+                        href='/https://bmhc-impact-home.onrender.com',  # URL for Impact Reports page
+                        children=html.H1(
+                            className='table-title1',
+                            children='Impact Reports'
+                        ),
+                        style={'textDecoration': 'none', 'color': 'inherit'}  # Optional styling
+                    )
+                ]
+            ),
+        ]
+    )
+])
 
 # Callback function
 # @app.callback(
